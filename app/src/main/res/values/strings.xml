@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FormularioContacto</string>
+    <string name="nombre">Nombre Completo</string>
+    <string name="fec_nac">Fecha Nacimiento</string>
+    <string name="telefono">Télefono</string>
+    <string name="email">Email</string>
+    <string name="des_contacto">Descripción Contacto</string>
+    <string name="title_name">Confirmar Datos</string>
+    
+    <!-- DATOS DESDE INTENT-->
+    <string name="key_nombre">nombre</string>
+    <string name="key_fecNac">fecha_nacimiento</string>
+    <string name="key_telefono">telefono</string>
+    <string name="key_email">email</string>
+    <string name="key_desCont">descripcion</string>
+</resources>

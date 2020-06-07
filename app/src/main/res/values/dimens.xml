@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MARGIN-->
+    <dimen name="mt_3">16dp</dimen>
+    <dimen name="mt_5">64dp</dimen>
+
+    <!-- PADDING-->
+    <dimen name="pa_3">16dp</dimen>
+
+    <!-- TEXT SIZE-->
+    <dimen name="size_title">24sp</dimen>
+    <dimen name="size_text">14sp</dimen>
+
+    <!-- BUTTON SIZE-->
+    <dimen name="size_button">200dp</dimen>
+</resources>

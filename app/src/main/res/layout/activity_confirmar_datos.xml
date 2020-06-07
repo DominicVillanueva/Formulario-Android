@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmarDatos"
+    android:padding="@dimen/pa_3">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_name"
+        android:textSize="@dimen/size_title"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_text"
+        android:layout_marginTop="@dimen/mt_3"
+        android:layout_below="@id/tvTitle"
+        android:text="name"/>
+
+    <LinearLayout
+        android:id="@+id/areaFecNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tvNombre">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha Nacimiento:"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp" />
+        <TextView
+            android:id="@+id/tvFecNac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/areaFecNac">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tel:"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp" />
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/areaTel">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp" />
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/areaEmail">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripción:"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp" />
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text"
+            android:layout_marginTop="@dimen/mt_3"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEditData"
+        android:layout_width="@dimen/size_button"
+        android:layout_height="wrap_content"
+        android:text="Editar Datos"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="@dimen/mt_5"
+        android:layout_below="@id/areaDescripcion"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
