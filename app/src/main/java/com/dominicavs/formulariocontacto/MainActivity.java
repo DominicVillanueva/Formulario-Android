@@ -19,6 +19,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputEditText etNombre;
+    private TextInputLayout tlFecNac;
     private TextInputEditText etFecNac;
     private TextInputEditText etTelefono;
     private TextInputEditText etEmail;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         descripcion = parametros != null ? parametros.getString(getResources().getString(R.string.key_desCont)) : "";
 
         etNombre = (TextInputEditText) findViewById(R.id.etNombre);
+        tlFecNac = (TextInputLayout) findViewById(R.id.tlFecNac);
+        tlFecNac.setOnClickListener(this);
         etFecNac = (TextInputEditText) findViewById(R.id.etFecNac);
         etFecNac.setOnClickListener(this);
         etTelefono = (TextInputEditText) findViewById(R.id.etTelefono);
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.tlFecNac:
             case R.id.etFecNac:
                 showDatePickerDialog();
                 break;
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void addData() {
         Intent i = new Intent(MainActivity.this, ConfirmarDatos.class);
         i.putExtra(getResources().getString(R.string.key_nombre), etNombre.getText().toString());
-        i.putExtra(getResources().getString(R.string.key_fecNac), etFecNac.getText().toString());
+        i.putExtra(getResources().getString(R.string.key_fecNac), tlFecNac.getEditText().getText().toString());
         i.putExtra(getResources().getString(R.string.key_telefono), etTelefono.getText().toString());
         i.putExtra(getResources().getString(R.string.key_email), etEmail.getText().toString());
         i.putExtra(getResources().getString(R.string.key_desCont), etDesContacto.getText().toString());
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 final String selectedDate = dayOfMonth + "/" + (month+1) + "/" + year;
 
-                etFecNac.setText(selectedDate);
+                tlFecNac.getEditText().setText(selectedDate);
             }
         });
 
@@ -94,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void loadData() {
         etNombre.setText(nombre);
-        etFecNac.setText(fecha_nacimiento);
+        tlFecNac.getEditText().setText(fecha_nacimiento);
         etTelefono.setText(telefono);
         etEmail.setText(email);
         etDesContacto.setText(descripcion);
