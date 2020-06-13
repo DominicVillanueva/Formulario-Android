@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Bundle parametros = getIntent().getExtras();
-        nombre = parametros.getString(getResources().getString(R.string.key_nombre));
-        fecha_nacimiento = parametros.getString(getResources().getString(R.string.key_fecNac));
-        telefono = parametros.getString(getResources().getString(R.string.key_telefono));
-        email = parametros.getString(getResources().getString(R.string.key_email));
-        descripcion = parametros.getString(getResources().getString(R.string.key_desCont));
+        nombre = parametros != null ? parametros.getString(getResources().getString(R.string.key_nombre)) : "";
+        fecha_nacimiento = parametros != null ? parametros.getString(getResources().getString(R.string.key_fecNac)) : "";
+        telefono = parametros != null ? parametros.getString(getResources().getString(R.string.key_telefono)) : "";
+        email = parametros != null ? parametros.getString(getResources().getString(R.string.key_email)) : "";
+        descripcion = parametros != null ? parametros.getString(getResources().getString(R.string.key_desCont)) : "";
 
         etNombre = (TextInputEditText) findViewById(R.id.etNombre);
         etFecNac = (TextInputEditText) findViewById(R.id.etFecNac);
@@ -71,9 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         i.putExtra(getResources().getString(R.string.key_telefono), etTelefono.getText().toString());
         i.putExtra(getResources().getString(R.string.key_email), etEmail.getText().toString());
         i.putExtra(getResources().getString(R.string.key_desCont), etDesContacto.getText().toString());
-        startActivity(i);
         showMessageConfirm("¡Registro exitoso!");
-        finish();
+        startActivity(i);
     }
 
     public void showMessageConfirm(String message) {
